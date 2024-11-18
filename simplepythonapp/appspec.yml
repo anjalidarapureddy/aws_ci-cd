@@ -1,12 +1,22 @@
 version: 0.0
 os: linux
 
+# Specify where the files will be copied from the repository
+files:
+  - source: /simplepythonapp/
+    destination: /home/ec2-user/simplepythonapp/
+
+# Hooks to execute at various stages of the deployment
 hooks:
-  ApplicationStop:
-    - location: scripts/stop_container.sh
+  BeforeInstall:
+    - location: scripts/stop_existing_app.sh
       timeout: 300
-      runas: root
   AfterInstall:
-    - location: scripts/start_container.sh
+    - location: scripts/install_dependencies.sh
       timeout: 300
-      runas: root
+  ApplicationStart:
+    - location: scripts/start_calculator.sh
+      timeout: 300
+  ValidateService:
+    - location: scripts/validate_service.sh
+      timeout: 300
