@@ -5,5 +5,5 @@ sudo apt-get update
 sudo apt-get install -y python3 python3-pip
 
 # Install Python dependencies from requirements.txt
-cd /home/ec2-user/simplepythonapp
+cd /home/ubuntu/simplepythonapp
 pip3 install -r requirements.txt
