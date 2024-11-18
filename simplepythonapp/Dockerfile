@@ -5,7 +5,7 @@ FROM python:3.9-slim
 WORKDIR /app
 
 # Copy the Python application into the container
-COPY calculator.py .
+COPY app.py .
 
 # Define the command to run the application
-CMD ["python", "calculator.py"]
+CMD ["python", "app.py"]
