@@ -4,7 +4,7 @@ os: linux
 # Specify where the files will be copied from the repository
 files:
   - source: /simplepythonapp/
-    destination: /home/ec2-user/simplepythonapp/
+    destination: /home/ubuntu/simplepythonapp/
 
 # Hooks to execute at various stages of the deployment
 hooks:
