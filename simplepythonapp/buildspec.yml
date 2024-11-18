@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+ install:
+   commands:
+     - echo "Installing Python and dependencies..."
+    
+     - apt-get update && apt-get install -y python3 python3-pip
+ pre_build:
+  commands:
+    - echo "Environment details:"
+    - env
+    - echo "Listing files:"
+    - ls -R
+ build:
+    commands:
+      - echo "Running the python calculator application..."
+      
+      - python3 simplepythonapp/app.py add 10 20
+   
